@@ -1,9 +1,10 @@
 <h2 align="center">
  Pharma Medical Management System - v1.0<br/>
-  <a href="#
-" target="_blank">Live App</a>
+  <a href="#" target="_blank">Live App</a>
 
 </h2>
+
+## Status: Development
 
 Pharma Medical Management System is a MERN Application which developed with the features of Pharma Medical Data Tracking, Processing and Report Generation Management System.
 *Note: This is backend repository.
