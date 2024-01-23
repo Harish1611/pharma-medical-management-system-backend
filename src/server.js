@@ -1,8 +1,5 @@
-import express from "express";
-
-const app = express();
-
-const port = 3000;
+const app = require('./index');
+const port = 5454;
 
 
 app.listen( port, ()=>{
