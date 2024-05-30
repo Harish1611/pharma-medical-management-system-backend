@@ -22,7 +22,7 @@ const userSchema = new mongoose.Schema({
     required:true,
     default:"ADMIN"
   },
-  mobile: {
+  mobileNumber: {
     type: String,
   },
   createdAt: {

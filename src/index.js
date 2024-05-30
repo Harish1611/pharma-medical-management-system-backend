@@ -13,5 +13,8 @@ app.get("/", (req,res)=>{
 
 })
 
+const adminAuthController = require('./routes/auth.routes');
+app.use('/admin', adminAuthController)
+
 
 module.exports = app; 
