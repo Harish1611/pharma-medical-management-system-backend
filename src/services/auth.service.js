@@ -29,4 +29,23 @@ const createAdmin = async (adminData) => {
 };
 
 
-module.exports = {createAdmin}
+const getAdminByEmail = async (email) => {
+
+  try{
+
+     const admin = await Admin.findOne(email);
+
+     if(!admin){
+
+      throw new Error({message: "Admin not found with email", email})
+     }
+
+     return admin;
+
+  }catch(err){
+
+    throw new Error(err.message);
+  }
+}
+
+module.exports = {createAdmin, getAdminByEmail}
