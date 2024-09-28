@@ -21,11 +21,11 @@ const createResource = async (resourceData) => {
 }
 
 
-const getAllResources = () => {
+const getAllResources = async () => {
 
     try{
 
-        const resources = Resource.find();
+        const resources = await Resource.find();
 
         return resources;
 

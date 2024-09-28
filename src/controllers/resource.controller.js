@@ -11,4 +11,17 @@ const createResource = async (req, res) => {
   }
 };
 
-module.exports = {createResource};
+const getAllResources = async (req, res) => {
+
+  try{
+
+    const resources = await resourceService.getAllResources();
+    return res.status(200).send(resources);
+
+  }catch(err){
+    return res.status(500).send({error: err.message});
+  }
+
+}
+
+module.exports = {createResource, getAllResources};
