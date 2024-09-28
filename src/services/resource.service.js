@@ -21,4 +21,17 @@ const createResource = async (resourceData) => {
 }
 
 
-module.exports = {createResource}
+const getAllResources = () => {
+
+    try{
+
+        const resources = Resource.find();
+
+        return resources;
+
+    }catch(err){
+        throw new Error(err.message)
+    }
+}
+
+module.exports = {createResource, getAllResources}
