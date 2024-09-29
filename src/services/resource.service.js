@@ -34,4 +34,18 @@ const getAllResources = async () => {
     }
 }
 
-module.exports = {createResource, getAllResources}
+
+const getResourceById = async (resourceId) => {
+
+    try{
+
+        const resource = await Resource.findById(resourceId);
+
+        return resource;
+
+    }catch(err){
+        throw new Error(err.message)
+    }
+}
+
+module.exports = {createResource, getAllResources,getResourceById}
