@@ -28,8 +28,8 @@ const getAllResources = async (req, res) => {
 const getResourceById = async (req, res) => {
 
   try{
-
-    const resource = await Resource.getResourceById(req.params.id);
+    const resId = req.params.id;
+    const resource = await resourceService.getResourceById(resId);
     return res.status(200).send(resource);
 
   }catch(err){
