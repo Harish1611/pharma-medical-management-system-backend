@@ -1,3 +1,4 @@
+const Resource = require("../model/resource.model");
 const resourceService = require("../services/resource.service");
 
 const createResource = async (req, res) => {
@@ -24,4 +25,16 @@ const getAllResources = async (req, res) => {
 
 }
 
-module.exports = {createResource, getAllResources};
+const getResourceById = async (req, res) => {
+
+  try{
+
+    const resource = await Resource.getResourceById(req.params.id);
+    return res.status(200).send(resource);
+
+  }catch(err){
+    return res.status(500).send({error:err.message})
+  }
+}
+
+module.exports = {createResource, getAllResources, getResourceById};
