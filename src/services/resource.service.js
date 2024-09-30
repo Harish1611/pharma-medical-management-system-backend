@@ -48,4 +48,20 @@ const getResourceById = async (resourceId) => {
     }
 }
 
-module.exports = {createResource, getAllResources,getResourceById}
+
+
+const updateResource = async (resourceId, reqData) => {
+
+    try{
+
+        const resource = await Resource.findByIdAndUpdate(resourceId, reqData);
+
+        return resource;
+
+    }catch(err){
+        throw new Error(err.message)
+    }
+}
+
+
+module.exports = {createResource, getAllResources,getResourceById, updateResource}
