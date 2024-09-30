@@ -37,4 +37,18 @@ const getResourceById = async (req, res) => {
   }
 }
 
-module.exports = {createResource, getAllResources, getResourceById};
+const updateResoruce = async (req,res) => {
+
+  try{
+
+    const resource = await resourceService.updateResource(req.body);
+
+    return res.status(200).send({message:'Resource Updated Successfully',resource})
+
+
+  }catch(err){
+    return res.status(500).send({error: err.message})
+  }
+}
+
+module.exports = {createResource, getAllResources, getResourceById, updateResoruce };
