@@ -54,7 +54,7 @@ const updateResource = async (resourceId, reqData) => {
 
     try{
 
-        const resource = await Resource.findByIdAndUpdate(resourceId, reqData);
+        const resource = await Resource.findByIdAndUpdate(resourceId, reqData); // By Defaults it gives old resource - if you need updated resouce need to add (resourceId,reqData, {new:true}) 
 
         return resource;
 
