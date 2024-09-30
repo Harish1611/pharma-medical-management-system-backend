@@ -41,7 +41,7 @@ const updateResoruce = async (req,res) => {
 
   try{
 
-    const resource = await resourceService.updateResource(req.body);
+    const resource = await resourceService.updateResource(req.params.id,req.body);
 
     return res.status(200).send({message:'Resource Updated Successfully',resource})
 
