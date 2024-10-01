@@ -63,15 +63,15 @@ const deleteResource = async (req,res) => {
   }
 }
 
-const resourceCount = async (req,res) => {
-  try{
-
-    const resourceCount = await resourceService.resourceCount();
-    return res.status(200).send(resourceCount);
-
-  }catch(err){
-    return res.status(500).send({error: err.message});
+const resourceCount = async (req, res) => {
+  try {
+    const resourceCounts = await resourceService.resourceCount();
+   
+    return res.status(200).send({count: resourceCounts});
+  } catch (err) {
+    console.error("Error in resourceCount:", err); // For debugging
+    return res.status(500).send({ error: err.message });
   }
-}
+};
 
 module.exports = {createResource, getAllResources, getResourceById, updateResoruce, deleteResource,resourceCount };

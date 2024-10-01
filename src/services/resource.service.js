@@ -79,8 +79,8 @@ const deleteResource = async (resourceId) =>{
 const resourceCount = async () => {
     try{
 
-        const resourceCount = await Resource.countDocuments({});
-        return resourceCount;
+        const resourceCounts = await Resource.countDocuments({});
+        return resourceCounts;
 
     }catch(err){
         throw new Error(err.message);
