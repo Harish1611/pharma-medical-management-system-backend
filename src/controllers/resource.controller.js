@@ -51,4 +51,16 @@ const updateResoruce = async (req,res) => {
   }
 }
 
-module.exports = {createResource, getAllResources, getResourceById, updateResoruce };
+const deleteResource = async (req,res) => {
+
+  try{
+
+    const resource = await resourceService.deleteResource(req.params.id);
+    return res.status(200).send({message:'Resource Deleted Successfully',resource});
+
+  }catch(err){
+    return res.status(200).send({error:err.message});
+  }
+}
+
+module.exports = {createResource, getAllResources, getResourceById, updateResoruce, deleteResource };
