@@ -63,10 +63,10 @@ const updateResource = async (resourceId, reqData) => {
     }
 }
 
-const deleteResource = (resourceId) =>{
+const deleteResource = async (resourceId) =>{
 
     try{
-        const resource = Resource.findByIdAndDelete(resourceId);
+        const resource = await Resource.findByIdAndDelete(resourceId);
         if(!resource){
             throw new Error('Resource not found');
         }
