@@ -5,7 +5,7 @@ const createResource = async (req, res) => {
   try {
     const resource = resourceService.createResource(req.body);
 
-    return res.status(200).send({ message: "New Resource created successfully!" });
+    return res.status(200).send({ message: "New Resource created successfully!", resource });
 
   } catch (err) {
     return res.status(500).send({ error: err.message });
