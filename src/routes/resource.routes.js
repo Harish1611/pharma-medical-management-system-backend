@@ -6,6 +6,7 @@ router.post('/create-resource', resourceController.createResource);
 router.get('/get-resources', resourceController.getAllResources);
 router.get('/id/:id', resourceController.getResourceById);
 router.put('/update-resource/:id', resourceController.updateResoruce);
+router.delete('/delete-resource/:id', resourceController.deleteResource);
 
 
 module.exports = router;
