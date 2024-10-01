@@ -59,7 +59,18 @@ const deleteResource = async (req,res) => {
     return res.status(200).send({message:'Resource Deleted Successfully',resource});
 
   }catch(err){
-    return res.status(200).send({error:err.message});
+    return res.status(500).send({error:err.message});
+  }
+}
+
+const resourceCount = async (req,res) => {
+  try{
+
+    const resourceCount = await resourceService.resourceCount();
+    return res.status(200).send(resourceCount);
+
+  }catch(err){
+    return res.status(500).send({error: err.message});
   }
 }
 
