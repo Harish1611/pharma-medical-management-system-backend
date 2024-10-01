@@ -76,5 +76,16 @@ const deleteResource = async (resourceId) =>{
     }
 }
 
+const resourceCount = async () => {
+    try{
 
-module.exports = {createResource, getAllResources,getResourceById, updateResource, deleteResource}
+        const resourceCount = Resource.countDocuments({});
+        return resourceCount;
+
+    }catch(err){
+        throw new Error(err.message);
+    }
+}
+
+
+module.exports = {createResource, getAllResources,getResourceById, updateResource, deleteResource, resourceCount}
