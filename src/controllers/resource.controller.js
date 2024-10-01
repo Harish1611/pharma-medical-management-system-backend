@@ -74,4 +74,4 @@ const resourceCount = async (req,res) => {
   }
 }
 
-module.exports = {createResource, getAllResources, getResourceById, updateResoruce, deleteResource };
+module.exports = {createResource, getAllResources, getResourceById, updateResoruce, deleteResource,resourceCount };
