@@ -63,5 +63,18 @@ const updateResource = async (resourceId, reqData) => {
     }
 }
 
+const deleteResource = (resourceId) =>{
 
-module.exports = {createResource, getAllResources,getResourceById, updateResource}
+    try{
+        const resource = Resource.findByIdAndDelete(resourceId);
+        if(!resource){
+            throw new Error('Resource not found');
+        }
+        return resource;
+    }catch(err){
+        throw new Error(err.message);
+    }
+}
+
+
+module.exports = {createResource, getAllResources,getResourceById, updateResource, deleteResource}
